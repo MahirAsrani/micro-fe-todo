@@ -51,7 +51,8 @@ const App = () => {
             <ListItem
               title={item.name}
               completed={item.completed}
-              action={() => markToTodo(item.timestamp)}
+              rmAction={() => removeToTodo(item.timestamp)}
+              cmpAction={() => markToTodo(item.timestamp)}
             />
           )
       )}
@@ -59,7 +60,11 @@ const App = () => {
       {todo.map(
         (item) =>
           item.completed && (
-            <ListItem title={item.name} completed={item.completed} />
+            <ListItem
+              title={item.name}
+              completed={item.completed}
+              rmAction={() => removeToTodo(item.timestamp)}
+            />
           )
       )}
     </div>
